@@ -119,6 +119,10 @@ El target `make dev` usaba `grep -s PORT .env` para leer el puerto configurado. 
 
 La IA no incluyó ninguna comprobación previa al arranque del servidor. Si el puerto ya estaba ocupado, nodemon fallaba con un error `EADDRINUSE` sin ningún mensaje orientativo. Se añadió una verificación explícita al inicio del target `dev` que detiene la ejecución con el mensaje `ERROR: Port X is already in use. Stop the existing process and retry.` antes de intentar arrancar el servidor.
 
+### 7. Los cambios a archivos existentes no se reflejaron en el README
+
+La IA generó todos los artefactos nuevos correctamente, pero no actualizó el `README.md`. Las instrucciones de configuración seguían describiendo el flujo original: `npm install`, `npm install nodemon -g` y `nodemon server.js`. Un desarrollador que siguiera el README habría reproducido exactamente los mismos puntos de fricción que el PAIN_LOG documenta. Se reescribió el README para reflejar el nuevo flujo basado en `make setup` y `make dev`, corregir variables de entorno ficticias (`HOST`, `NODE_ENV`) que la IA había introducido en una versión intermedia, y eliminar la referencia a un `setup.sh` que nunca existió.
+
 ---
 
 ## Tiempo hasta la primera ejecución (Benchmark)

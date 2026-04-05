@@ -4,68 +4,45 @@ Real-time chat application built with Node.js, Express.js and Socket.io.
 
 ## Features
 
-- Users can enter the chat.
-- Users receive a random generated name on join.
+- Users enter the chat and receive a randomly generated name.
 - Users can change their name.
 - Users can send and receive messages in real-time.
 - Chats are not persisted to a database.
 
 ## Prerequisites
 
-- Node.js 18.x (see .nvmrc)
-- npm (bundled with Node.js)
-- Git Bash or WSL on Windows for running setup.sh
+- Node.js >=18 (see `.nvmrc` — run `nvm use` if you have nvm)
+- GNU Make — Windows: use Git Bash, WSL, or `choco install make`
 
-## Golden Path Setup
-
-1. Clone and enter the repository.
+## Setup
 
 ```sh
-git clone <your-fork-url>
+git clone <repo-url>
 cd lesson-6-node-express-chatbox
+make setup
+make dev
 ```
 
-2. Run bootstrap setup.
-
-```sh
-sh setup.sh
-```
-
-What setup.sh does:
-- Validates Node major version.
-- Validates npm is available.
-- Creates .env from .env.example if missing.
-- Installs dependencies.
-- Runs npm audit check and prints remediation guidance if issues exist.
-
-3. Start the development server.
-
-```sh
-npm run dev
-```
-
-4. Verify the app is running.
-
-- Expected terminal message: `Listening to requests on http://0.0.0.0:3001`
-- Open: http://localhost:3001
-- Expected behavior: chat UI loads and a session id appears in User details.
+Open `http://localhost:3001` in your browser.
 
 ## Configuration
 
-Runtime configuration is managed through .env.
+Copy `.env.example` to `.env` (done automatically by `make setup`) and edit as needed.
 
-- PORT: server port (default 3001)
-- HOST: bind host (default 0.0.0.0)
-- NODE_ENV: runtime mode (development, test, production)
+| Variable | Default | Description |
+|---|---|---|
+| `PORT` | `3001` | TCP port the server listens on |
 
-Use .env.example as the template for local setup.
+## Available Commands
 
-## Scripts
-
-- npm run setup: run onboarding bootstrap script
-- npm run dev: run server with nodemon
-- npm start: run server with node
-- npm test: smoke check placeholder (prints status and exits 0)
+| Command | Description |
+|---|---|
+| `make setup` | Install dependencies and create `.env` from `.env.example` |
+| `make dev` | Start development server with auto-reload (nodemon) |
+| `make start` | Start production server (no auto-reload) |
+| `make test` | Run smoke test — verifies server loads and exits with code 0 |
+| `make audit` | Print npm vulnerability report with remediation guidance |
+| `make clean` | Remove `node_modules` and `.env` to reset to a clean state |
 
 ## Screenshots
 
@@ -79,4 +56,5 @@ Use .env.example as the template for local setup.
 
 ## Sources
 
-- https://expressjs.com/
+- [Express Documentation](https://expressjs.com/)
+- [Socket.io Documentation](https://socket.io/docs/)
