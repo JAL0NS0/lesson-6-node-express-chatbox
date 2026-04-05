@@ -43,8 +43,9 @@ Ruta de configuración auditada únicamente desde el README:
 
 * **Total de puntos de fricción encontrados:** 8
 * **Primer bloqueador total alcanzado en:** Después de iniciar `nodemon server.js` (paso 3 de la configuración), porque el README no proporciona una URL de verificación ni una acción siguiente para confirmar que la aplicación funciona.
-* **Tiempo estimado perdido para una nueva contratación:** 25-45 minutos
-    * 10-15 min para descubrir cómo verificar la aplicación en ejecución.
-    * 5-10 min para resolver la ambigüedad de la herramienta global (`nodemon -g`).
-    * 5-10 min para investigar el fallo en el comando de pruebas.
-    * 5-10 min para conciliar suposiciones de versiones y configuración.
+* **Tiempo estimado perdido para una nueva contratación:** ~10 minutos
+    * 3-4 min para descubrir cómo verificar la aplicación en ejecución.
+    * 2-3 min para resolver la ambigüedad de la herramienta global (`nodemon -g`).
+    * 2-3 min para investigar el fallo en el comando de pruebas.
+    * 1-2 min para conciliar suposiciones de versiones y configuración.
+* **Tiempo con el Golden Path:** menos de 10 segundos (`make setup && make dev`)
