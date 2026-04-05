@@ -18,9 +18,8 @@ function randFromArray(array) {
 /*
 Global Variables
 */
-var url = 'http://localhost:3001';
 var socket_id;
-var socket = io(url);
+var socket = io();
 var current_id = document.getElementById('current-id');
 var current_username = document.getElementById('current-username');
 var btn_message = document.getElementById('send-message');

@@ -1,13 +1,73 @@
 # Chat App
-Building a real-time chat application using Nodejs, Express.js and socket.io
+
+Real-time chat application built with Node.js, Express.js and Socket.io.
+
+## Features
 
 - Users can enter the chat.
-- Upon entering chat users are given a randomly generated name.
+- Users receive a random generated name on join.
 - Users can change their name.
-- Users can send and receive messages in real-time from other users.
-- Chats are not currently being persisted to a database or log file.
+- Users can send and receive messages in real-time.
+- Chats are not persisted to a database.
 
-# Screenshots
+## Prerequisites
+
+- Node.js 18.x (see .nvmrc)
+- npm (bundled with Node.js)
+- Git Bash or WSL on Windows for running setup.sh
+
+## Golden Path Setup
+
+1. Clone and enter the repository.
+
+```sh
+git clone <your-fork-url>
+cd lesson-6-node-express-chatbox
+```
+
+2. Run bootstrap setup.
+
+```sh
+sh setup.sh
+```
+
+What setup.sh does:
+- Validates Node major version.
+- Validates npm is available.
+- Creates .env from .env.example if missing.
+- Installs dependencies.
+- Runs npm audit check and prints remediation guidance if issues exist.
+
+3. Start the development server.
+
+```sh
+npm run dev
+```
+
+4. Verify the app is running.
+
+- Expected terminal message: `Listening to requests on http://0.0.0.0:3001`
+- Open: http://localhost:3001
+- Expected behavior: chat UI loads and a session id appears in User details.
+
+## Configuration
+
+Runtime configuration is managed through .env.
+
+- PORT: server port (default 3001)
+- HOST: bind host (default 0.0.0.0)
+- NODE_ENV: runtime mode (development, test, production)
+
+Use .env.example as the template for local setup.
+
+## Scripts
+
+- npm run setup: run onboarding bootstrap script
+- npm run dev: run server with nodemon
+- npm start: run server with node
+- npm test: smoke check placeholder (prints status and exits 0)
+
+## Screenshots
 
 ![](https://github.com/danielc92/node-express-chatbox/blob/master/screenshots/Screen%20Shot%202019-07-11%20at%2011.29.03%20am.jpg)
 
@@ -17,52 +77,6 @@ Building a real-time chat application using Nodejs, Express.js and socket.io
 
 ![](https://github.com/danielc92/node-express-chatbox/blob/master/screenshots/Screen%20Shot%202019-07-11%20at%2011.30.17%20am.jpg)
 
+## Sources
 
-
-# Before you get started
-Refresh on the following things;
-- HTML5/CSS
-- socket.io
-- Express.js web framework
-- Javascript (ES6)
-- Node
-
-# Setup
-
-**Installing Depencendies**
-
-Dependencies and versions are listed in the package.json "dependencies" key, and can be installed via the following command from root:
-
-```sh
-npm install
-```
-
-**Installation of nodemon**
-
-This project uses nodemon for hot reloading
-I installed it globally using:
-
-```sh
-npm install nodemon -g
-```
-
-**Installation of Node**
-
-This project requires `nodejs` to run.
-
-**Starting the dev server**
-
-`nodemon` will auto reload the server upon file changes.
-
-```sh
-nodemon server.js
-```
-
-# Tests
-- Tested bidirectional messaging successfully
-
-# Contributors
-- Daniel Corcoran
-
-# Sources
-- [Express Documentation](https://expressjs.com/)
+- https://expressjs.com/

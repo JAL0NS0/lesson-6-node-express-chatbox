@@ -13,8 +13,9 @@ app.get('/', (request, response) => {
 })
 
 
-// Listen on 3001
-const server = app.listen(3001, ()=>console.log('Listening to requests on port 3001'))
+// Listen on PORT from environment, default 3001
+const PORT = process.env.PORT || 3001;
+const server = app.listen(PORT, () => console.log(`Listening on port ${PORT} — open http://localhost:${PORT}`))
 
 // Listens for client connections
 const io = socket(server);
